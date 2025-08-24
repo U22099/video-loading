@@ -81,7 +81,7 @@ function CountdownPage() {
         )}
       </div>
 
-      <footer className="absolute bottom-6 text-sm text-muted-foreground">
+      <footer>
         Powered by Christmas Lights Factory • Custom Lighting Solutions
       </footer>
     </main>
@@ -107,7 +107,7 @@ function PageSkeleton() {
           <Skeleton className="w-full aspect-video rounded-xl" />
         </div>
       </div>
-      <footer className="absolute bottom-6 text-sm text-muted-foreground">
+      <footer>
         Powered by Christmas Lights Factory • Custom Lighting Solutions
       </footer>
     </main>

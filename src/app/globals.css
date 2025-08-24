@@ -4,19 +4,20 @@
 
 @layer base {
   :root {
-    --background: 0 0% 96.1%; /* #f5f5f5 */
-    --foreground: 210 29% 25%; /* #2c3e50 */
+    --background: 0 0% 96.1%;
+    --foreground: 210 29% 25%;
     --card: 0 0% 100%;
     --card-foreground: 210 29% 25%;
     --popover: 0 0% 100%;
     --popover-foreground: 210 29% 25%;
-    --primary: 259 50% 60%; /* Readable lavender */
+    --primary: 259 50% 60%;
     --primary-foreground: 0 0% 98%;
     --secondary: 15 100% 90%;
     --secondary-foreground: 15 30% 25%;
     --muted: 0 0% 90%;
     --muted-foreground: 0 0% 45.1%;
-    --accent: 15 100% 90%; /* #FFD6C9 */
+    --accent: 15 100% 90%;
+    /* #FFD6C9 */
     --accent-foreground: 15 30% 25%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
@@ -38,6 +39,7 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
   .dark {
     --background: 210 29% 15%;
     --foreground: 0 0% 96.1%;
@@ -74,11 +76,74 @@
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7f9fc;
+  color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.timer {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #16a085;
+  margin-bottom: 25px;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  padding-bottom: 56.25%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background: #000;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.note {
+  margin-top: 10px;
+  font-size: .9rem;
+  color: #a33;
+  display: none;
+  max-width: 720px;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 0.85rem;
+  color: #888;
 }
