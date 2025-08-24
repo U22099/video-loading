@@ -21,7 +21,7 @@ function CountdownPage() {
     const sourceUrl = videoQuery?.trim() || DEFAULT_YT_URL;
 
     const id = getYoutubeVideoId(sourceUrl);
-    
+
     if (id) {
       setVideoId(id);
     } else {
@@ -51,66 +51,58 @@ function CountdownPage() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen p-6 text-center bg-background font-body">
-      <div className="max-w-3xl w-full space-y-8">
-        <div>
-          <h1 className="text-4xl font-bold text-foreground mb-3 font-headline">
-            We're designing your lighting setup...
-          </h1>
-          <p className="text-lg text-muted-foreground">
-            Watch this quick walkthrough to understand how we create your free custom system — it's worth it.
-          </p>
-        </div>
+    <>
+      <h1>
+        We're designing your lighting setup...
+      </h1>
+      <p>
+        Watch this quick walkthrough to understand how we create your free custom system — it's worth it.
+      </p>
 
-        <div className="text-6xl font-semibold text-primary">
-          {formatTime(countdown)}
-        </div>
+      <div className="timer">
+        {formatTime(countdown)}
+      </div>
 
-        <div className="w-full">
-          {videoId ? (
-            <VideoPlayer videoId={videoId} />
-          ) : (
-            <Skeleton className="w-full aspect-video rounded-xl" />
-          )}
-        </div>
-
-        {error && (
-          <p className="text-destructive max-w-xl mx-auto">
-            {error}
-          </p>
+      <div className="w-full sm:max-w-2xl rounded-xl shadow-2xl bg-[#10141a] p-6 border border-[#1c2632]">
+        {videoId ? (
+          <VideoPlayer videoId={videoId} />
+        ) : (
+          <Skeleton className="w-full aspect-video rounded-xl" />
         )}
       </div>
+
+      {error && (
+        <p className="note">
+          {error}
+        </p>
+      )}
 
       <footer>
         Powered by Christmas Lights Factory • Custom Lighting Solutions
       </footer>
-    </main>
+    </>
   );
 }
 
 function PageSkeleton() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen p-6 text-center bg-background font-body">
-      <div className="max-w-3xl w-full space-y-8">
-        <div>
-          <h1 className="text-4xl font-bold text-foreground mb-3 font-headline">
-            We're designing your lighting setup...
-          </h1>
-          <p className="text-lg text-muted-foreground">
-            Watch this quick walkthrough to understand how we create your free custom system — it's worth it.
-          </p>
-        </div>
-        <div className="text-6xl font-semibold text-primary">
-          03:00
-        </div>
-        <div className="w-full">
-          <Skeleton className="w-full aspect-video rounded-xl" />
-        </div>
+    <>
+      <h1>
+        We're designing your lighting setup...
+      </h1>
+      <p>
+        Watch this quick walkthrough to understand how we create your free custom system — it's worth it.
+      </p>
+      <div className="timer">
+        03:00
+      </div>
+      <div className="max-w-2xl rounded-xl shadow-2xl bg-[#10141a] p-6 border border-[#1c2632]">
+        <Skeleton className="w-full aspect-video rounded-xl" />
       </div>
       <footer>
         Powered by Christmas Lights Factory • Custom Lighting Solutions
       </footer>
-    </main>
+    </>
   );
 }
 
